@@ -8,7 +8,7 @@ const conditionField = document.querySelector('.condition-field');
 
 const API_KEY = '76a5285352394bf589c71830260906';
 const BASE_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=`;
-let targetLocation = 'Mumbai';
+let targetLocation = 'Chittagong';
 
 const getDayName = (number) => {
   switch (number) {
