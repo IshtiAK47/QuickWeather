@@ -1,3 +1,10 @@
+## Student Information
+
+- Ishtiak Mahmood
+- ID: B220102002
+- Department of ICT, Session 22-23
+
+
 # QuickWeather
 
 QuickWeather is a minimal, responsive, university-level weather application built with pure HTML5, CSS3, and vanilla JavaScript (ES6+). It fetches real-time weather data from WeatherAPI and presents the result in a clean, centered dashboard with a search experience and a live-location option.
@@ -88,9 +95,5 @@ Examples:
 - Weather data is displayed in Celsius.
 - The design intentionally stays minimal to keep the interface clear and focused.
 
-## Student Information
 
-- Ishtiak Mahmood
-- ID: B220102002
-- Department of ICT, Session 22-23
 
