@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Universal Weather Application built with vanilla HTML, CSS, and JavaScript.">
+  <title>Universal Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="weather-container" aria-label="Universal weather application">
+    <section class="weather-card">
+      <div class="weather-copy">
+        <p class="eyebrow">Universal Weather</p>
+        <h1>Minimal local weather, instantly.</h1>
+        <p class="subcopy">Search any city and read the current conditions in a clean, focused layout.</p>
+      </div>
+
+      <form class="search-form" autocomplete="off">
+        <label class="sr-only" for="search-field">Search location</label>
+        <input id="search-field" class="search-field" type="text" name="location" placeholder="Enter a city name" value="Mumbai" aria-label="Search location">
+        <button type="submit" class="search-button">Search</button>
+        <button type="button" class="location-button">Live Location</button>
+      </form>
+
+      <section class="weather-readout" aria-live="polite">
+        <div class="temp-field">--°C</div>
+        <div class="location-field">Loading location...</div>
+        <div class="date-time-field">--</div>
+        <div class="condition-field">Fetching current weather...</div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

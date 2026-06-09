@@ -1,0 +1,221 @@
+:root {
+  color-scheme: dark;
+  --bg-start: #08111f;
+  --bg-end: #111b2e;
+  --card-bg: rgba(9, 15, 28, 0.78);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f3f7ff;
+  --text-secondary: #a8b3c7;
+  --accent: #77d6ff;
+  --accent-strong: #b5f0ff;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top, rgba(119, 214, 255, 0.18), transparent 38%),
+    linear-gradient(160deg, var(--bg-start), var(--bg-end));
+}
+
+.weather-container {
+  width: min(100%, 520px);
+}
+
+.weather-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 40%);
+  pointer-events: none;
+}
+
+.weather-copy,
+.search-form,
+.weather-readout {
+  position: relative;
+  z-index: 1;
+}
+
+.weather-copy {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.weather-copy h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.55rem);
+  line-height: 1.05;
+}
+
+.subcopy {
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 8px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.search-form:focus-within {
+  box-shadow: 0 0 0 1px rgba(119, 214, 255, 0.28) inset;
+}
+
+.search-field {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 0;
+  outline: 0;
+  border-radius: 14px;
+  color: var(--text-primary);
+  font: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.search-field::placeholder {
+  color: rgba(243, 247, 255, 0.52);
+}
+
+.search-field:focus {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.search-button,
+.location-button {
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  min-height: 48px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.search-button {
+  color: #05111d;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+}
+
+.location-button {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-button:hover,
+.search-button:focus-visible,
+.location-button:hover,
+.location-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(119, 214, 255, 0.22);
+  filter: brightness(1.03);
+}
+
+.search-button:focus-visible,
+.location-button:focus-visible {
+  outline: 2px solid rgba(181, 240, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.weather-readout {
+  display: grid;
+  gap: 10px;
+}
+
+.temp-field {
+  font-size: clamp(4rem, 13vw, 6.5rem);
+  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.location-field {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.date-time-field,
+.condition-field {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 16px;
+  }
+
+  .weather-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .location-button {
+    width: 100%;
+  }
+}
